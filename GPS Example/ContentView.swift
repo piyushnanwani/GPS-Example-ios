@@ -7,17 +7,20 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @StateObject private var locationManager = LocationManager()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Your Latitude: \(locationManager.latitude)")
+                .padding()
+            Text("Your Longitude: \(locationManager.longitude)")
+                .padding()
         }
-        .padding()
     }
 }
+
 
 #Preview {
     ContentView()
